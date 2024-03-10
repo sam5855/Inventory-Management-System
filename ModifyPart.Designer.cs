@@ -39,13 +39,13 @@
             this.priceLabel = new System.Windows.Forms.Label();
             this.inventoryLabel = new System.Windows.Forms.Label();
             this.nameLabel = new System.Windows.Forms.Label();
-            this.machineCompanyTextBox = new System.Windows.Forms.TextBox();
-            this.minTextbox = new System.Windows.Forms.TextBox();
-            this.maxTextBox = new System.Windows.Forms.TextBox();
-            this.priceTextBox = new System.Windows.Forms.TextBox();
-            this.inventoryTextBox = new System.Windows.Forms.TextBox();
-            this.nameTextBox = new System.Windows.Forms.TextBox();
-            this.idTextBox = new System.Windows.Forms.TextBox();
+            this.modPartMachineCompanyTextBox = new System.Windows.Forms.TextBox();
+            this.modPartMinTextBox = new System.Windows.Forms.TextBox();
+            this.modPartMaxTextBox = new System.Windows.Forms.TextBox();
+            this.modPartPriceTextBox = new System.Windows.Forms.TextBox();
+            this.modPartInventoryTextBox = new System.Windows.Forms.TextBox();
+            this.modPartNameTextBox = new System.Windows.Forms.TextBox();
+            this.modPartIDTextBox = new System.Windows.Forms.TextBox();
             this.idLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -70,6 +70,7 @@
             this.inHouseBtn.TabStop = true;
             this.inHouseBtn.Text = "In-House";
             this.inHouseBtn.UseVisualStyleBackColor = true;
+            this.inHouseBtn.CheckedChanged += new System.EventHandler(this.inHouseBtn_CheckedChanged);
             // 
             // radioButton1
             // 
@@ -80,6 +81,7 @@
             this.radioButton1.TabIndex = 3;
             this.radioButton1.Text = "Outsourced";
             this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
             // partCancelBtn
             // 
@@ -89,6 +91,7 @@
             this.partCancelBtn.TabIndex = 34;
             this.partCancelBtn.Text = "Cancel";
             this.partCancelBtn.UseVisualStyleBackColor = true;
+            this.partCancelBtn.Click += new System.EventHandler(this.partCancelBtn_Click);
             // 
             // partSaveBtn
             // 
@@ -98,6 +101,7 @@
             this.partSaveBtn.TabIndex = 33;
             this.partSaveBtn.Text = "Save";
             this.partSaveBtn.UseVisualStyleBackColor = true;
+            this.partSaveBtn.Click += new System.EventHandler(this.partSaveBtn_Click);
             // 
             // machineCompanyLabel
             // 
@@ -159,61 +163,61 @@
             this.nameLabel.TabIndex = 27;
             this.nameLabel.Text = "Name";
             // 
-            // machineCompanyTextBox
+            // modPartMachineCompanyTextBox
             // 
-            this.machineCompanyTextBox.Location = new System.Drawing.Point(200, 359);
-            this.machineCompanyTextBox.Multiline = true;
-            this.machineCompanyTextBox.Name = "machineCompanyTextBox";
-            this.machineCompanyTextBox.Size = new System.Drawing.Size(165, 28);
-            this.machineCompanyTextBox.TabIndex = 26;
+            this.modPartMachineCompanyTextBox.Location = new System.Drawing.Point(200, 359);
+            this.modPartMachineCompanyTextBox.Multiline = true;
+            this.modPartMachineCompanyTextBox.Name = "modPartMachineCompanyTextBox";
+            this.modPartMachineCompanyTextBox.Size = new System.Drawing.Size(165, 28);
+            this.modPartMachineCompanyTextBox.TabIndex = 26;
             // 
-            // minTextbox
+            // modPartMinTextBox
             // 
-            this.minTextbox.Location = new System.Drawing.Point(379, 306);
-            this.minTextbox.Multiline = true;
-            this.minTextbox.Name = "minTextbox";
-            this.minTextbox.Size = new System.Drawing.Size(82, 28);
-            this.minTextbox.TabIndex = 25;
+            this.modPartMinTextBox.Location = new System.Drawing.Point(379, 306);
+            this.modPartMinTextBox.Multiline = true;
+            this.modPartMinTextBox.Name = "modPartMinTextBox";
+            this.modPartMinTextBox.Size = new System.Drawing.Size(82, 28);
+            this.modPartMinTextBox.TabIndex = 25;
             // 
-            // maxTextBox
+            // modPartMaxTextBox
             // 
-            this.maxTextBox.Location = new System.Drawing.Point(200, 306);
-            this.maxTextBox.Multiline = true;
-            this.maxTextBox.Name = "maxTextBox";
-            this.maxTextBox.Size = new System.Drawing.Size(82, 28);
-            this.maxTextBox.TabIndex = 24;
+            this.modPartMaxTextBox.Location = new System.Drawing.Point(200, 306);
+            this.modPartMaxTextBox.Multiline = true;
+            this.modPartMaxTextBox.Name = "modPartMaxTextBox";
+            this.modPartMaxTextBox.Size = new System.Drawing.Size(82, 28);
+            this.modPartMaxTextBox.TabIndex = 24;
             // 
-            // priceTextBox
+            // modPartPriceTextBox
             // 
-            this.priceTextBox.Location = new System.Drawing.Point(200, 255);
-            this.priceTextBox.Multiline = true;
-            this.priceTextBox.Name = "priceTextBox";
-            this.priceTextBox.Size = new System.Drawing.Size(165, 28);
-            this.priceTextBox.TabIndex = 23;
+            this.modPartPriceTextBox.Location = new System.Drawing.Point(200, 255);
+            this.modPartPriceTextBox.Multiline = true;
+            this.modPartPriceTextBox.Name = "modPartPriceTextBox";
+            this.modPartPriceTextBox.Size = new System.Drawing.Size(165, 28);
+            this.modPartPriceTextBox.TabIndex = 23;
             // 
-            // inventoryTextBox
+            // modPartInventoryTextBox
             // 
-            this.inventoryTextBox.Location = new System.Drawing.Point(200, 202);
-            this.inventoryTextBox.Multiline = true;
-            this.inventoryTextBox.Name = "inventoryTextBox";
-            this.inventoryTextBox.Size = new System.Drawing.Size(165, 28);
-            this.inventoryTextBox.TabIndex = 22;
+            this.modPartInventoryTextBox.Location = new System.Drawing.Point(200, 202);
+            this.modPartInventoryTextBox.Multiline = true;
+            this.modPartInventoryTextBox.Name = "modPartInventoryTextBox";
+            this.modPartInventoryTextBox.Size = new System.Drawing.Size(165, 28);
+            this.modPartInventoryTextBox.TabIndex = 22;
             // 
-            // nameTextBox
+            // modPartNameTextBox
             // 
-            this.nameTextBox.Location = new System.Drawing.Point(200, 152);
-            this.nameTextBox.Multiline = true;
-            this.nameTextBox.Name = "nameTextBox";
-            this.nameTextBox.Size = new System.Drawing.Size(165, 28);
-            this.nameTextBox.TabIndex = 21;
+            this.modPartNameTextBox.Location = new System.Drawing.Point(200, 152);
+            this.modPartNameTextBox.Multiline = true;
+            this.modPartNameTextBox.Name = "modPartNameTextBox";
+            this.modPartNameTextBox.Size = new System.Drawing.Size(165, 28);
+            this.modPartNameTextBox.TabIndex = 21;
             // 
-            // idTextBox
+            // modPartIDTextBox
             // 
-            this.idTextBox.Location = new System.Drawing.Point(200, 107);
-            this.idTextBox.Multiline = true;
-            this.idTextBox.Name = "idTextBox";
-            this.idTextBox.Size = new System.Drawing.Size(165, 28);
-            this.idTextBox.TabIndex = 20;
+            this.modPartIDTextBox.Location = new System.Drawing.Point(200, 107);
+            this.modPartIDTextBox.Multiline = true;
+            this.modPartIDTextBox.Name = "modPartIDTextBox";
+            this.modPartIDTextBox.Size = new System.Drawing.Size(165, 28);
+            this.modPartIDTextBox.TabIndex = 20;
             // 
             // idLabel
             // 
@@ -238,19 +242,20 @@
             this.Controls.Add(this.priceLabel);
             this.Controls.Add(this.inventoryLabel);
             this.Controls.Add(this.nameLabel);
-            this.Controls.Add(this.machineCompanyTextBox);
-            this.Controls.Add(this.minTextbox);
-            this.Controls.Add(this.maxTextBox);
-            this.Controls.Add(this.priceTextBox);
-            this.Controls.Add(this.inventoryTextBox);
-            this.Controls.Add(this.nameTextBox);
-            this.Controls.Add(this.idTextBox);
+            this.Controls.Add(this.modPartMachineCompanyTextBox);
+            this.Controls.Add(this.modPartMinTextBox);
+            this.Controls.Add(this.modPartMaxTextBox);
+            this.Controls.Add(this.modPartPriceTextBox);
+            this.Controls.Add(this.modPartInventoryTextBox);
+            this.Controls.Add(this.modPartNameTextBox);
+            this.Controls.Add(this.modPartIDTextBox);
             this.Controls.Add(this.idLabel);
             this.Controls.Add(this.radioButton1);
             this.Controls.Add(this.inHouseBtn);
             this.Controls.Add(this.modifyPartLabel);
             this.Name = "ModifyPart";
             this.Text = "ModifyPart";
+            this.Load += new System.EventHandler(this.ModifyPart_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -269,13 +274,13 @@
         private System.Windows.Forms.Label priceLabel;
         private System.Windows.Forms.Label inventoryLabel;
         private System.Windows.Forms.Label nameLabel;
-        private System.Windows.Forms.TextBox machineCompanyTextBox;
-        private System.Windows.Forms.TextBox minTextbox;
-        private System.Windows.Forms.TextBox maxTextBox;
-        private System.Windows.Forms.TextBox priceTextBox;
-        private System.Windows.Forms.TextBox inventoryTextBox;
-        private System.Windows.Forms.TextBox nameTextBox;
-        private System.Windows.Forms.TextBox idTextBox;
+        private System.Windows.Forms.TextBox modPartMachineCompanyTextBox;
+        private System.Windows.Forms.TextBox modPartMinTextBox;
+        private System.Windows.Forms.TextBox modPartMaxTextBox;
+        private System.Windows.Forms.TextBox modPartPriceTextBox;
+        private System.Windows.Forms.TextBox modPartInventoryTextBox;
+        private System.Windows.Forms.TextBox modPartNameTextBox;
+        private System.Windows.Forms.TextBox modPartIDTextBox;
         private System.Windows.Forms.Label idLabel;
     }
 }

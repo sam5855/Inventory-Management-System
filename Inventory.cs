@@ -11,7 +11,7 @@ namespace Samuel_McMasters_C968
     class Inventory
     {
         public static BindingList<Product> Products = new BindingList<Product>();
-        public static BindingList<Part> Parts = new BindingList<Part>();
+        public static BindingList<Part> AllParts = new BindingList<Part>();
 
 
 
@@ -75,6 +75,9 @@ namespace Samuel_McMasters_C968
                 }
             }
         }
+        public static Product CurrentProduct { get; set; }
+        public static int CurrentProductID { get; set; }
+        public static int CurrentProductIndex { get; set; }
 
 
 
@@ -83,6 +86,70 @@ namespace Samuel_McMasters_C968
 
         //Part Methods
 
+        //Add Part to binding list
+        public static void AddPart(Part part)
+        {
+            AllParts.Add(part);
+        }
+
+        //Remove part from binding list
+        public static bool DeletePart(Part part)
+        {
+            try
+            {
+                AllParts.Remove(part);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        //Search for Part
+        public static Part LookupPart(int partID)
+        {
+            foreach (Part part in AllParts)
+            {
+                if (part.PartID == partID)
+                {
+                    return part;
+                }
+            }
+
+            Part emptyPart = null;
+            return emptyPart;  
+        }
+
+        //Update Part
+        public static void UpdatePart(int partID, Part updatedPart)
+        {
+            foreach (Part currentPart in AllParts)
+            {
+                if (currentPart.PartID == partID)
+                {
+                    currentPart.Name = updatedPart.Name;
+                    currentPart.InStock = updatedPart.InStock;  
+                    currentPart.Price = updatedPart.Price;
+                    currentPart.Max = updatedPart.Max;
+                    currentPart.Min = updatedPart.Min;
+                    return;
+                }
+            }
+        }
+
+
+        //Populate Binding Lists with exmaple data
+        public static void ExampleItems()
+        {
+            Product exampleProduct = new Product(200, "Example Product", 5, 5.0m, 10, 5);
+            Products.Add(exampleProduct);
+
+            Part exampleInPart = new InhousePart(123, "Example In-Part", 10, 5.0m, 20, 10, 1001);
+            Part exampleOutPart = new OutsourcedPart(999, "Example Out-Part", 30, 1.0m, 45, 10, "Test Company");
+            AllParts.Add(exampleInPart);
+            AllParts.Add(exampleOutPart);
+        }
 
 
     }

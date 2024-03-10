@@ -10,7 +10,7 @@ namespace Samuel_McMasters_C968
     {
         public string CompanyName { get; set; }
 
-        public OutsourcedPart(int partID, string name, decimal price, int inStock, int min, int max, string companyName)
+        public OutsourcedPart(int partID, string name, int inStock, decimal price, int max, int min, string companyName)
         {
             PartID = partID;
             Name = name;    

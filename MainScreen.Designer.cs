@@ -55,12 +55,15 @@
             this.dgvParts.Name = "dgvParts";
             this.dgvParts.Size = new System.Drawing.Size(493, 241);
             this.dgvParts.TabIndex = 0;
+            this.dgvParts.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvParts_CellContentClick);
+            this.dgvParts.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.myBindingComplete);
             // 
             // dgvProducts
             // 
             this.dgvProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProducts.Location = new System.Drawing.Point(563, 119);
             this.dgvProducts.Name = "dgvProducts";
+            this.dgvProducts.ShowCellErrors = false;
             this.dgvProducts.Size = new System.Drawing.Size(493, 241);
             this.dgvProducts.TabIndex = 1;
             // 
@@ -72,6 +75,7 @@
             this.deletePartBtn.TabIndex = 2;
             this.deletePartBtn.Text = "Delete";
             this.deletePartBtn.UseVisualStyleBackColor = true;
+            this.deletePartBtn.Click += new System.EventHandler(this.deletePartBtn_Click);
             // 
             // modifyPartBtn
             // 
@@ -81,6 +85,7 @@
             this.modifyPartBtn.TabIndex = 3;
             this.modifyPartBtn.Text = "Modify";
             this.modifyPartBtn.UseVisualStyleBackColor = true;
+            this.modifyPartBtn.Click += new System.EventHandler(this.modifyPartBtn_Click);
             // 
             // addPartBtn
             // 
@@ -100,6 +105,7 @@
             this.deleteProductBtn.TabIndex = 5;
             this.deleteProductBtn.Text = "Delete";
             this.deleteProductBtn.UseVisualStyleBackColor = true;
+            this.deleteProductBtn.Click += new System.EventHandler(this.deleteProductBtn_Click);
             // 
             // modifyProductBtn
             // 
@@ -109,6 +115,7 @@
             this.modifyProductBtn.TabIndex = 6;
             this.modifyProductBtn.Text = "Modify";
             this.modifyProductBtn.UseVisualStyleBackColor = true;
+            this.modifyProductBtn.Click += new System.EventHandler(this.modifyProductBtn_Click);
             // 
             // addProductBtn
             // 
@@ -118,6 +125,7 @@
             this.addProductBtn.TabIndex = 7;
             this.addProductBtn.Text = "Add";
             this.addProductBtn.UseVisualStyleBackColor = true;
+            this.addProductBtn.Click += new System.EventHandler(this.addProductBtn_Click);
             // 
             // exitBtn
             // 
@@ -127,6 +135,7 @@
             this.exitBtn.TabIndex = 8;
             this.exitBtn.Text = "Exit";
             this.exitBtn.UseVisualStyleBackColor = true;
+            this.exitBtn.Click += new System.EventHandler(this.exitBtn_Click);
             // 
             // partsLabel
             // 
@@ -174,6 +183,7 @@
             this.partsSearchBtn.TabIndex = 13;
             this.partsSearchBtn.Text = "Search";
             this.partsSearchBtn.UseVisualStyleBackColor = true;
+            this.partsSearchBtn.Click += new System.EventHandler(this.partsSearchBtn_Click);
             // 
             // productSearchBox
             // 
@@ -222,9 +232,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dgvParts;
-        private System.Windows.Forms.DataGridView dgvProducts;
         private System.Windows.Forms.Button deletePartBtn;
         private System.Windows.Forms.Button modifyPartBtn;
         private System.Windows.Forms.Button addPartBtn;
@@ -239,6 +246,8 @@
         private System.Windows.Forms.Button partsSearchBtn;
         private System.Windows.Forms.TextBox productSearchBox;
         private System.Windows.Forms.Button productSearchBtn;
+        private System.Windows.Forms.DataGridView dgvParts;
+        public System.Windows.Forms.DataGridView dgvProducts;
     }
 }
 

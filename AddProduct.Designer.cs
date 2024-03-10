@@ -33,18 +33,18 @@
             this.priceLabel = new System.Windows.Forms.Label();
             this.inventoryLabel = new System.Windows.Forms.Label();
             this.nameLabel = new System.Windows.Forms.Label();
-            this.minTextbox = new System.Windows.Forms.TextBox();
-            this.maxTextBox = new System.Windows.Forms.TextBox();
-            this.priceTextBox = new System.Windows.Forms.TextBox();
-            this.inventoryTextBox = new System.Windows.Forms.TextBox();
-            this.nameTextBox = new System.Windows.Forms.TextBox();
-            this.idTextBox = new System.Windows.Forms.TextBox();
+            this.addProductMinTextBox = new System.Windows.Forms.TextBox();
+            this.addProductMaxTextBox = new System.Windows.Forms.TextBox();
+            this.addProductPriceTextBox = new System.Windows.Forms.TextBox();
+            this.addProductInventoryTextBox = new System.Windows.Forms.TextBox();
+            this.addProductNameTextBox = new System.Windows.Forms.TextBox();
+            this.addProductIDTextBox = new System.Windows.Forms.TextBox();
             this.idLabel = new System.Windows.Forms.Label();
             this.addProductLabel = new System.Windows.Forms.Label();
             this.dgvCandidateParts = new System.Windows.Forms.DataGridView();
             this.candidatePartsLabel = new System.Windows.Forms.Label();
             this.associatedPartsLabel = new System.Windows.Forms.Label();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dgvAssociatedParts = new System.Windows.Forms.DataGridView();
             this.candidatePartSearchBox = new System.Windows.Forms.TextBox();
             this.candidatePartSearchBtn = new System.Windows.Forms.Button();
             this.candidatePartAddBtn = new System.Windows.Forms.Button();
@@ -52,7 +52,7 @@
             this.productSaveBtn = new System.Windows.Forms.Button();
             this.productCancelBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCandidateParts)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAssociatedParts)).BeginInit();
             this.SuspendLayout();
             // 
             // minLabel
@@ -105,53 +105,53 @@
             this.nameLabel.TabIndex = 39;
             this.nameLabel.Text = "Name";
             // 
-            // minTextbox
+            // addProductMinTextBox
             // 
-            this.minTextbox.Location = new System.Drawing.Point(352, 374);
-            this.minTextbox.Multiline = true;
-            this.minTextbox.Name = "minTextbox";
-            this.minTextbox.Size = new System.Drawing.Size(82, 28);
-            this.minTextbox.TabIndex = 38;
+            this.addProductMinTextBox.Location = new System.Drawing.Point(352, 374);
+            this.addProductMinTextBox.Multiline = true;
+            this.addProductMinTextBox.Name = "addProductMinTextBox";
+            this.addProductMinTextBox.Size = new System.Drawing.Size(82, 28);
+            this.addProductMinTextBox.TabIndex = 38;
             // 
-            // maxTextBox
+            // addProductMaxTextBox
             // 
-            this.maxTextBox.Location = new System.Drawing.Point(173, 374);
-            this.maxTextBox.Multiline = true;
-            this.maxTextBox.Name = "maxTextBox";
-            this.maxTextBox.Size = new System.Drawing.Size(82, 28);
-            this.maxTextBox.TabIndex = 37;
+            this.addProductMaxTextBox.Location = new System.Drawing.Point(173, 374);
+            this.addProductMaxTextBox.Multiline = true;
+            this.addProductMaxTextBox.Name = "addProductMaxTextBox";
+            this.addProductMaxTextBox.Size = new System.Drawing.Size(82, 28);
+            this.addProductMaxTextBox.TabIndex = 37;
             // 
-            // priceTextBox
+            // addProductPriceTextBox
             // 
-            this.priceTextBox.Location = new System.Drawing.Point(173, 323);
-            this.priceTextBox.Multiline = true;
-            this.priceTextBox.Name = "priceTextBox";
-            this.priceTextBox.Size = new System.Drawing.Size(165, 28);
-            this.priceTextBox.TabIndex = 36;
+            this.addProductPriceTextBox.Location = new System.Drawing.Point(173, 323);
+            this.addProductPriceTextBox.Multiline = true;
+            this.addProductPriceTextBox.Name = "addProductPriceTextBox";
+            this.addProductPriceTextBox.Size = new System.Drawing.Size(165, 28);
+            this.addProductPriceTextBox.TabIndex = 36;
             // 
-            // inventoryTextBox
+            // addProductInventoryTextBox
             // 
-            this.inventoryTextBox.Location = new System.Drawing.Point(173, 270);
-            this.inventoryTextBox.Multiline = true;
-            this.inventoryTextBox.Name = "inventoryTextBox";
-            this.inventoryTextBox.Size = new System.Drawing.Size(165, 28);
-            this.inventoryTextBox.TabIndex = 35;
+            this.addProductInventoryTextBox.Location = new System.Drawing.Point(173, 270);
+            this.addProductInventoryTextBox.Multiline = true;
+            this.addProductInventoryTextBox.Name = "addProductInventoryTextBox";
+            this.addProductInventoryTextBox.Size = new System.Drawing.Size(165, 28);
+            this.addProductInventoryTextBox.TabIndex = 35;
             // 
-            // nameTextBox
+            // addProductNameTextBox
             // 
-            this.nameTextBox.Location = new System.Drawing.Point(173, 220);
-            this.nameTextBox.Multiline = true;
-            this.nameTextBox.Name = "nameTextBox";
-            this.nameTextBox.Size = new System.Drawing.Size(165, 28);
-            this.nameTextBox.TabIndex = 34;
+            this.addProductNameTextBox.Location = new System.Drawing.Point(173, 220);
+            this.addProductNameTextBox.Multiline = true;
+            this.addProductNameTextBox.Name = "addProductNameTextBox";
+            this.addProductNameTextBox.Size = new System.Drawing.Size(165, 28);
+            this.addProductNameTextBox.TabIndex = 34;
             // 
-            // idTextBox
+            // addProductIDTextBox
             // 
-            this.idTextBox.Location = new System.Drawing.Point(173, 175);
-            this.idTextBox.Multiline = true;
-            this.idTextBox.Name = "idTextBox";
-            this.idTextBox.Size = new System.Drawing.Size(165, 28);
-            this.idTextBox.TabIndex = 33;
+            this.addProductIDTextBox.Location = new System.Drawing.Point(173, 175);
+            this.addProductIDTextBox.Multiline = true;
+            this.addProductIDTextBox.Name = "addProductIDTextBox";
+            this.addProductIDTextBox.Size = new System.Drawing.Size(165, 28);
+            this.addProductIDTextBox.TabIndex = 33;
             // 
             // idLabel
             // 
@@ -180,6 +180,7 @@
             this.dgvCandidateParts.Name = "dgvCandidateParts";
             this.dgvCandidateParts.Size = new System.Drawing.Size(495, 150);
             this.dgvCandidateParts.TabIndex = 45;
+            this.dgvCandidateParts.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.bindingComplete);
             // 
             // candidatePartsLabel
             // 
@@ -202,14 +203,14 @@
             this.associatedPartsLabel.Text = "Parts Associated with this Product";
             this.associatedPartsLabel.Click += new System.EventHandler(this.label1_Click);
             // 
-            // dataGridView2
+            // dgvAssociatedParts
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(477, 361);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(495, 150);
-            this.dataGridView2.TabIndex = 47;
-            this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
+            this.dgvAssociatedParts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAssociatedParts.Location = new System.Drawing.Point(477, 361);
+            this.dgvAssociatedParts.Name = "dgvAssociatedParts";
+            this.dgvAssociatedParts.Size = new System.Drawing.Size(495, 150);
+            this.dgvAssociatedParts.TabIndex = 47;
+            this.dgvAssociatedParts.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
             // candidatePartSearchBox
             // 
@@ -226,6 +227,7 @@
             this.candidatePartSearchBtn.TabIndex = 50;
             this.candidatePartSearchBtn.Text = "Search";
             this.candidatePartSearchBtn.UseVisualStyleBackColor = true;
+            this.candidatePartSearchBtn.Click += new System.EventHandler(this.candidatePartSearchBtn_Click);
             // 
             // candidatePartAddBtn
             // 
@@ -235,6 +237,7 @@
             this.candidatePartAddBtn.TabIndex = 51;
             this.candidatePartAddBtn.Text = "Add";
             this.candidatePartAddBtn.UseVisualStyleBackColor = true;
+            this.candidatePartAddBtn.Click += new System.EventHandler(this.candidatePartAddBtn_Click);
             // 
             // partDeleteBtn
             // 
@@ -244,6 +247,7 @@
             this.partDeleteBtn.TabIndex = 52;
             this.partDeleteBtn.Text = "Delete";
             this.partDeleteBtn.UseVisualStyleBackColor = true;
+            this.partDeleteBtn.Click += new System.EventHandler(this.partDeleteBtn_Click);
             // 
             // productSaveBtn
             // 
@@ -253,6 +257,7 @@
             this.productSaveBtn.TabIndex = 53;
             this.productSaveBtn.Text = "Save";
             this.productSaveBtn.UseVisualStyleBackColor = true;
+            this.productSaveBtn.Click += new System.EventHandler(this.productSaveBtn_Click);
             // 
             // productCancelBtn
             // 
@@ -262,6 +267,7 @@
             this.productCancelBtn.TabIndex = 54;
             this.productCancelBtn.Text = "Cancel";
             this.productCancelBtn.UseVisualStyleBackColor = true;
+            this.productCancelBtn.Click += new System.EventHandler(this.productCancelBtn_Click);
             // 
             // AddProduct
             // 
@@ -275,7 +281,7 @@
             this.Controls.Add(this.candidatePartSearchBtn);
             this.Controls.Add(this.candidatePartSearchBox);
             this.Controls.Add(this.associatedPartsLabel);
-            this.Controls.Add(this.dataGridView2);
+            this.Controls.Add(this.dgvAssociatedParts);
             this.Controls.Add(this.candidatePartsLabel);
             this.Controls.Add(this.dgvCandidateParts);
             this.Controls.Add(this.addProductLabel);
@@ -284,17 +290,18 @@
             this.Controls.Add(this.priceLabel);
             this.Controls.Add(this.inventoryLabel);
             this.Controls.Add(this.nameLabel);
-            this.Controls.Add(this.minTextbox);
-            this.Controls.Add(this.maxTextBox);
-            this.Controls.Add(this.priceTextBox);
-            this.Controls.Add(this.inventoryTextBox);
-            this.Controls.Add(this.nameTextBox);
-            this.Controls.Add(this.idTextBox);
+            this.Controls.Add(this.addProductMinTextBox);
+            this.Controls.Add(this.addProductMaxTextBox);
+            this.Controls.Add(this.addProductPriceTextBox);
+            this.Controls.Add(this.addProductInventoryTextBox);
+            this.Controls.Add(this.addProductNameTextBox);
+            this.Controls.Add(this.addProductIDTextBox);
             this.Controls.Add(this.idLabel);
             this.Name = "AddProduct";
             this.Text = "Product";
+            this.Load += new System.EventHandler(this.AddProduct_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCandidateParts)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAssociatedParts)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -307,18 +314,18 @@
         private System.Windows.Forms.Label priceLabel;
         private System.Windows.Forms.Label inventoryLabel;
         private System.Windows.Forms.Label nameLabel;
-        private System.Windows.Forms.TextBox minTextbox;
-        private System.Windows.Forms.TextBox maxTextBox;
-        private System.Windows.Forms.TextBox priceTextBox;
-        private System.Windows.Forms.TextBox inventoryTextBox;
-        private System.Windows.Forms.TextBox nameTextBox;
-        private System.Windows.Forms.TextBox idTextBox;
+        private System.Windows.Forms.TextBox addProductMinTextBox;
+        private System.Windows.Forms.TextBox addProductMaxTextBox;
+        private System.Windows.Forms.TextBox addProductPriceTextBox;
+        private System.Windows.Forms.TextBox addProductInventoryTextBox;
+        private System.Windows.Forms.TextBox addProductNameTextBox;
+        private System.Windows.Forms.TextBox addProductIDTextBox;
         private System.Windows.Forms.Label idLabel;
         private System.Windows.Forms.Label addProductLabel;
         private System.Windows.Forms.DataGridView dgvCandidateParts;
         private System.Windows.Forms.Label candidatePartsLabel;
         private System.Windows.Forms.Label associatedPartsLabel;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView dgvAssociatedParts;
         private System.Windows.Forms.TextBox candidatePartSearchBox;
         private System.Windows.Forms.Button candidatePartSearchBtn;
         private System.Windows.Forms.Button candidatePartAddBtn;

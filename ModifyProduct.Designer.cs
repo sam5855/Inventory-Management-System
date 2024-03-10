@@ -35,24 +35,24 @@
             this.candidatePartSearchBtn = new System.Windows.Forms.Button();
             this.candidatePartSearchBox = new System.Windows.Forms.TextBox();
             this.associatedPartsLabel = new System.Windows.Forms.Label();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dgvModifyAssociatedParts = new System.Windows.Forms.DataGridView();
             this.candidatePartsLabel = new System.Windows.Forms.Label();
-            this.dgvCandidateParts = new System.Windows.Forms.DataGridView();
+            this.dgvModifyCandidateParts = new System.Windows.Forms.DataGridView();
             this.addProductLabel = new System.Windows.Forms.Label();
             this.minLabel = new System.Windows.Forms.Label();
             this.maxLabel = new System.Windows.Forms.Label();
             this.priceLabel = new System.Windows.Forms.Label();
             this.inventoryLabel = new System.Windows.Forms.Label();
             this.nameLabel = new System.Windows.Forms.Label();
-            this.minTextbox = new System.Windows.Forms.TextBox();
-            this.maxTextBox = new System.Windows.Forms.TextBox();
-            this.priceTextBox = new System.Windows.Forms.TextBox();
-            this.inventoryTextBox = new System.Windows.Forms.TextBox();
-            this.nameTextBox = new System.Windows.Forms.TextBox();
-            this.idTextBox = new System.Windows.Forms.TextBox();
+            this.modProdMinTextBox = new System.Windows.Forms.TextBox();
+            this.modProdMaxTextBox = new System.Windows.Forms.TextBox();
+            this.modProdPriceTextBox = new System.Windows.Forms.TextBox();
+            this.modProdInventoryTextBox = new System.Windows.Forms.TextBox();
+            this.modProdNameTextBox = new System.Windows.Forms.TextBox();
+            this.modProdIDTextBox = new System.Windows.Forms.TextBox();
             this.idLabel = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCandidateParts)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvModifyAssociatedParts)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvModifyCandidateParts)).BeginInit();
             this.SuspendLayout();
             // 
             // productCancelBtn
@@ -63,6 +63,7 @@
             this.productCancelBtn.TabIndex = 77;
             this.productCancelBtn.Text = "Cancel";
             this.productCancelBtn.UseVisualStyleBackColor = true;
+            this.productCancelBtn.Click += new System.EventHandler(this.productCancelBtn_Click);
             // 
             // productSaveBtn
             // 
@@ -72,6 +73,7 @@
             this.productSaveBtn.TabIndex = 76;
             this.productSaveBtn.Text = "Save";
             this.productSaveBtn.UseVisualStyleBackColor = true;
+            this.productSaveBtn.Click += new System.EventHandler(this.productSaveBtn_Click);
             // 
             // partDeleteBtn
             // 
@@ -81,6 +83,7 @@
             this.partDeleteBtn.TabIndex = 75;
             this.partDeleteBtn.Text = "Delete";
             this.partDeleteBtn.UseVisualStyleBackColor = true;
+            this.partDeleteBtn.Click += new System.EventHandler(this.partDeleteBtn_Click);
             // 
             // candidatePartAddBtn
             // 
@@ -90,6 +93,7 @@
             this.candidatePartAddBtn.TabIndex = 74;
             this.candidatePartAddBtn.Text = "Add";
             this.candidatePartAddBtn.UseVisualStyleBackColor = true;
+            this.candidatePartAddBtn.Click += new System.EventHandler(this.candidatePartAddBtn_Click);
             // 
             // candidatePartSearchBtn
             // 
@@ -117,13 +121,13 @@
             this.associatedPartsLabel.TabIndex = 71;
             this.associatedPartsLabel.Text = "Parts Associated with this Product";
             // 
-            // dataGridView2
+            // dgvModifyAssociatedParts
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(465, 355);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(495, 150);
-            this.dataGridView2.TabIndex = 70;
+            this.dgvModifyAssociatedParts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvModifyAssociatedParts.Location = new System.Drawing.Point(465, 355);
+            this.dgvModifyAssociatedParts.Name = "dgvModifyAssociatedParts";
+            this.dgvModifyAssociatedParts.Size = new System.Drawing.Size(495, 150);
+            this.dgvModifyAssociatedParts.TabIndex = 70;
             // 
             // candidatePartsLabel
             // 
@@ -135,13 +139,13 @@
             this.candidatePartsLabel.TabIndex = 69;
             this.candidatePartsLabel.Text = "All Candidate Parts";
             // 
-            // dgvCandidateParts
+            // dgvModifyCandidateParts
             // 
-            this.dgvCandidateParts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCandidateParts.Location = new System.Drawing.Point(466, 88);
-            this.dgvCandidateParts.Name = "dgvCandidateParts";
-            this.dgvCandidateParts.Size = new System.Drawing.Size(495, 150);
-            this.dgvCandidateParts.TabIndex = 68;
+            this.dgvModifyCandidateParts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvModifyCandidateParts.Location = new System.Drawing.Point(466, 88);
+            this.dgvModifyCandidateParts.Name = "dgvModifyCandidateParts";
+            this.dgvModifyCandidateParts.Size = new System.Drawing.Size(495, 150);
+            this.dgvModifyCandidateParts.TabIndex = 68;
             // 
             // addProductLabel
             // 
@@ -203,53 +207,53 @@
             this.nameLabel.TabIndex = 62;
             this.nameLabel.Text = "Name";
             // 
-            // minTextbox
+            // modProdMinTextBox
             // 
-            this.minTextbox.Location = new System.Drawing.Point(340, 368);
-            this.minTextbox.Multiline = true;
-            this.minTextbox.Name = "minTextbox";
-            this.minTextbox.Size = new System.Drawing.Size(82, 28);
-            this.minTextbox.TabIndex = 61;
+            this.modProdMinTextBox.Location = new System.Drawing.Point(340, 368);
+            this.modProdMinTextBox.Multiline = true;
+            this.modProdMinTextBox.Name = "modProdMinTextBox";
+            this.modProdMinTextBox.Size = new System.Drawing.Size(82, 28);
+            this.modProdMinTextBox.TabIndex = 61;
             // 
-            // maxTextBox
+            // modProdMaxTextBox
             // 
-            this.maxTextBox.Location = new System.Drawing.Point(161, 368);
-            this.maxTextBox.Multiline = true;
-            this.maxTextBox.Name = "maxTextBox";
-            this.maxTextBox.Size = new System.Drawing.Size(82, 28);
-            this.maxTextBox.TabIndex = 60;
+            this.modProdMaxTextBox.Location = new System.Drawing.Point(161, 368);
+            this.modProdMaxTextBox.Multiline = true;
+            this.modProdMaxTextBox.Name = "modProdMaxTextBox";
+            this.modProdMaxTextBox.Size = new System.Drawing.Size(82, 28);
+            this.modProdMaxTextBox.TabIndex = 60;
             // 
-            // priceTextBox
+            // modProdPriceTextBox
             // 
-            this.priceTextBox.Location = new System.Drawing.Point(161, 317);
-            this.priceTextBox.Multiline = true;
-            this.priceTextBox.Name = "priceTextBox";
-            this.priceTextBox.Size = new System.Drawing.Size(165, 28);
-            this.priceTextBox.TabIndex = 59;
+            this.modProdPriceTextBox.Location = new System.Drawing.Point(161, 317);
+            this.modProdPriceTextBox.Multiline = true;
+            this.modProdPriceTextBox.Name = "modProdPriceTextBox";
+            this.modProdPriceTextBox.Size = new System.Drawing.Size(165, 28);
+            this.modProdPriceTextBox.TabIndex = 59;
             // 
-            // inventoryTextBox
+            // modProdInventoryTextBox
             // 
-            this.inventoryTextBox.Location = new System.Drawing.Point(161, 264);
-            this.inventoryTextBox.Multiline = true;
-            this.inventoryTextBox.Name = "inventoryTextBox";
-            this.inventoryTextBox.Size = new System.Drawing.Size(165, 28);
-            this.inventoryTextBox.TabIndex = 58;
+            this.modProdInventoryTextBox.Location = new System.Drawing.Point(161, 264);
+            this.modProdInventoryTextBox.Multiline = true;
+            this.modProdInventoryTextBox.Name = "modProdInventoryTextBox";
+            this.modProdInventoryTextBox.Size = new System.Drawing.Size(165, 28);
+            this.modProdInventoryTextBox.TabIndex = 58;
             // 
-            // nameTextBox
+            // modProdNameTextBox
             // 
-            this.nameTextBox.Location = new System.Drawing.Point(161, 214);
-            this.nameTextBox.Multiline = true;
-            this.nameTextBox.Name = "nameTextBox";
-            this.nameTextBox.Size = new System.Drawing.Size(165, 28);
-            this.nameTextBox.TabIndex = 57;
+            this.modProdNameTextBox.Location = new System.Drawing.Point(161, 214);
+            this.modProdNameTextBox.Multiline = true;
+            this.modProdNameTextBox.Name = "modProdNameTextBox";
+            this.modProdNameTextBox.Size = new System.Drawing.Size(165, 28);
+            this.modProdNameTextBox.TabIndex = 57;
             // 
-            // idTextBox
+            // modProdIDTextBox
             // 
-            this.idTextBox.Location = new System.Drawing.Point(161, 169);
-            this.idTextBox.Multiline = true;
-            this.idTextBox.Name = "idTextBox";
-            this.idTextBox.Size = new System.Drawing.Size(165, 28);
-            this.idTextBox.TabIndex = 56;
+            this.modProdIDTextBox.Location = new System.Drawing.Point(161, 169);
+            this.modProdIDTextBox.Multiline = true;
+            this.modProdIDTextBox.Name = "modProdIDTextBox";
+            this.modProdIDTextBox.Size = new System.Drawing.Size(165, 28);
+            this.modProdIDTextBox.TabIndex = 56;
             // 
             // idLabel
             // 
@@ -273,26 +277,27 @@
             this.Controls.Add(this.candidatePartSearchBtn);
             this.Controls.Add(this.candidatePartSearchBox);
             this.Controls.Add(this.associatedPartsLabel);
-            this.Controls.Add(this.dataGridView2);
+            this.Controls.Add(this.dgvModifyAssociatedParts);
             this.Controls.Add(this.candidatePartsLabel);
-            this.Controls.Add(this.dgvCandidateParts);
+            this.Controls.Add(this.dgvModifyCandidateParts);
             this.Controls.Add(this.addProductLabel);
             this.Controls.Add(this.minLabel);
             this.Controls.Add(this.maxLabel);
             this.Controls.Add(this.priceLabel);
             this.Controls.Add(this.inventoryLabel);
             this.Controls.Add(this.nameLabel);
-            this.Controls.Add(this.minTextbox);
-            this.Controls.Add(this.maxTextBox);
-            this.Controls.Add(this.priceTextBox);
-            this.Controls.Add(this.inventoryTextBox);
-            this.Controls.Add(this.nameTextBox);
-            this.Controls.Add(this.idTextBox);
+            this.Controls.Add(this.modProdMinTextBox);
+            this.Controls.Add(this.modProdMaxTextBox);
+            this.Controls.Add(this.modProdPriceTextBox);
+            this.Controls.Add(this.modProdInventoryTextBox);
+            this.Controls.Add(this.modProdNameTextBox);
+            this.Controls.Add(this.modProdIDTextBox);
             this.Controls.Add(this.idLabel);
             this.Name = "ModifyProduct";
             this.Text = "Product";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCandidateParts)).EndInit();
+            this.Load += new System.EventHandler(this.ModifyProduct_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvModifyAssociatedParts)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvModifyCandidateParts)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -307,21 +312,21 @@
         private System.Windows.Forms.Button candidatePartSearchBtn;
         private System.Windows.Forms.TextBox candidatePartSearchBox;
         private System.Windows.Forms.Label associatedPartsLabel;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView dgvModifyAssociatedParts;
         private System.Windows.Forms.Label candidatePartsLabel;
-        private System.Windows.Forms.DataGridView dgvCandidateParts;
+        private System.Windows.Forms.DataGridView dgvModifyCandidateParts;
         private System.Windows.Forms.Label addProductLabel;
         private System.Windows.Forms.Label minLabel;
         private System.Windows.Forms.Label maxLabel;
         private System.Windows.Forms.Label priceLabel;
         private System.Windows.Forms.Label inventoryLabel;
         private System.Windows.Forms.Label nameLabel;
-        private System.Windows.Forms.TextBox minTextbox;
-        private System.Windows.Forms.TextBox maxTextBox;
-        private System.Windows.Forms.TextBox priceTextBox;
-        private System.Windows.Forms.TextBox inventoryTextBox;
-        private System.Windows.Forms.TextBox nameTextBox;
-        private System.Windows.Forms.TextBox idTextBox;
+        private System.Windows.Forms.TextBox modProdMinTextBox;
+        private System.Windows.Forms.TextBox modProdMaxTextBox;
+        private System.Windows.Forms.TextBox modProdPriceTextBox;
+        private System.Windows.Forms.TextBox modProdInventoryTextBox;
+        private System.Windows.Forms.TextBox modProdNameTextBox;
+        private System.Windows.Forms.TextBox modProdIDTextBox;
         private System.Windows.Forms.Label idLabel;
     }
 }
