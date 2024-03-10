@@ -16,9 +16,11 @@ namespace Samuel_McMasters_C968
         {
             InitializeComponent();
 
+            //Method to load example parts and products
             Inventory.ExampleItems();
 
             //Load data grids with data
+
             dgvParts.DataSource = Inventory.AllParts;
             dgvProducts.DataSource = Inventory.Products;
 
@@ -190,6 +192,9 @@ namespace Samuel_McMasters_C968
             Close();
         }
 
-       
+        private void MainScreen_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

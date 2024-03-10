@@ -13,6 +13,10 @@ namespace Samuel_McMasters_C968
     public partial class ModifyPart : Form
     {
 
+
+        MainScreen MainForm = (MainScreen)Application.OpenForms["MainScreen"];
+
+
         //Load selected In-House Part
         public ModifyPart(InhousePart inPart)
         {
@@ -37,6 +41,9 @@ namespace Samuel_McMasters_C968
             modPartMaxTextBox.Text = outPart.Max.ToString();
             modPartMinTextBox.Text = outPart.Min.ToString();
             modPartMachineCompanyTextBox.Text = outPart.CompanyName;
+
+            //Checks Radio button for outsourced part
+            radioButton1.Checked = true;
         }
 
         private void ModifyPart_Load(object sender, EventArgs e)
@@ -44,24 +51,84 @@ namespace Samuel_McMasters_C968
 
         }
 
+        //Override selected part and save new data
         private void partSaveBtn_Click(object sender, EventArgs e)
         {
+            int min;
+            int max;
+            int inStock;
+            decimal price;
+
+            try
+            {
+                min = int.Parse(modPartMinTextBox.Text);
+                max = int.Parse(modPartMaxTextBox.Text);
+                inStock = int.Parse(modPartInventoryTextBox.Text);
+                price = decimal.Parse(modPartPriceTextBox.Text);
+            }
+            catch
+            {
+                MessageBox.Show("ERROR: Inventory, Price, Max and Min must be numeric values.");
+                return;
+            }
+
+            int id = int.Parse(modPartIDTextBox.Text);
+            string name = modPartNameTextBox.Text;
+            price = decimal.Parse(modPartPriceTextBox.Text);
+            min = int.Parse(modPartMinTextBox.Text);
+            max = int.Parse(modPartMaxTextBox.Text);
+            inStock = int.Parse(modPartInventoryTextBox.Text);
+
+
+            //Exception Handling 
+            if (min > max)
+            {
+                MessageBox.Show("ERROR: Max must be greater than min.");
+                return;
+            }
+            
+            if (inStock > max || inStock < min)
+            {
+                MessageBox.Show("ERROR: Inventory must be between max and min levels.");
+                return;
+            }
+
+            if (inHouseBtn.Checked)
+            {
+                InhousePart inPart = new InhousePart(id, name, inStock, price, max, min, int.Parse(modPartMachineCompanyTextBox.Text));
+                Inventory.UpdatePart(id, inPart);
+                inHouseBtn.Checked = true;
+            }
+            else
+            {
+                OutsourcedPart outPart = new OutsourcedPart(id, name, inStock, price, max, min, modPartMachineCompanyTextBox.Text);
+                Inventory.UpdatePart(id, outPart);
+                radioButton1.Checked = true;
+            }
+            Close();
+            MainForm.dgvParts.Update();
+            MainForm.dgvParts.Refresh();
+
+
 
         }
 
         private void partCancelBtn_Click(object sender, EventArgs e)
         {
-
+            Close();
         }
 
+        //Changes text to "Machine ID"
         private void inHouseBtn_CheckedChanged(object sender, EventArgs e)
         {
-
+            machineCompanyLabel.Text = "Machine ID";
         }
 
+
+        //Changes text to "Company Name"
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
-
+            machineCompanyLabel.Text = "Company Name";
         }
     }
 }

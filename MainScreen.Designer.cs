@@ -224,6 +224,7 @@
             this.Controls.Add(this.dgvParts);
             this.Name = "MainScreen";
             this.Text = "Main Screen";
+            this.Load += new System.EventHandler(this.MainScreen_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvParts)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).EndInit();
             this.ResumeLayout(false);
@@ -246,8 +247,8 @@
         private System.Windows.Forms.Button partsSearchBtn;
         private System.Windows.Forms.TextBox productSearchBox;
         private System.Windows.Forms.Button productSearchBtn;
-        private System.Windows.Forms.DataGridView dgvParts;
         public System.Windows.Forms.DataGridView dgvProducts;
+        public System.Windows.Forms.DataGridView dgvParts;
     }
 }
 

@@ -117,7 +117,7 @@
             // 
             this.minLabel.AutoSize = true;
             this.minLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.minLabel.Location = new System.Drawing.Point(309, 306);
+            this.minLabel.Location = new System.Drawing.Point(341, 306);
             this.minLabel.Name = "minLabel";
             this.minLabel.Size = new System.Drawing.Size(41, 24);
             this.minLabel.TabIndex = 31;
@@ -165,7 +165,7 @@
             // 
             // modPartMachineCompanyTextBox
             // 
-            this.modPartMachineCompanyTextBox.Location = new System.Drawing.Point(200, 359);
+            this.modPartMachineCompanyTextBox.Location = new System.Drawing.Point(232, 359);
             this.modPartMachineCompanyTextBox.Multiline = true;
             this.modPartMachineCompanyTextBox.Name = "modPartMachineCompanyTextBox";
             this.modPartMachineCompanyTextBox.Size = new System.Drawing.Size(165, 28);
@@ -173,7 +173,7 @@
             // 
             // modPartMinTextBox
             // 
-            this.modPartMinTextBox.Location = new System.Drawing.Point(379, 306);
+            this.modPartMinTextBox.Location = new System.Drawing.Point(411, 306);
             this.modPartMinTextBox.Multiline = true;
             this.modPartMinTextBox.Name = "modPartMinTextBox";
             this.modPartMinTextBox.Size = new System.Drawing.Size(82, 28);
@@ -181,7 +181,7 @@
             // 
             // modPartMaxTextBox
             // 
-            this.modPartMaxTextBox.Location = new System.Drawing.Point(200, 306);
+            this.modPartMaxTextBox.Location = new System.Drawing.Point(232, 306);
             this.modPartMaxTextBox.Multiline = true;
             this.modPartMaxTextBox.Name = "modPartMaxTextBox";
             this.modPartMaxTextBox.Size = new System.Drawing.Size(82, 28);
@@ -189,7 +189,7 @@
             // 
             // modPartPriceTextBox
             // 
-            this.modPartPriceTextBox.Location = new System.Drawing.Point(200, 255);
+            this.modPartPriceTextBox.Location = new System.Drawing.Point(232, 255);
             this.modPartPriceTextBox.Multiline = true;
             this.modPartPriceTextBox.Name = "modPartPriceTextBox";
             this.modPartPriceTextBox.Size = new System.Drawing.Size(165, 28);
@@ -197,7 +197,7 @@
             // 
             // modPartInventoryTextBox
             // 
-            this.modPartInventoryTextBox.Location = new System.Drawing.Point(200, 202);
+            this.modPartInventoryTextBox.Location = new System.Drawing.Point(232, 202);
             this.modPartInventoryTextBox.Multiline = true;
             this.modPartInventoryTextBox.Name = "modPartInventoryTextBox";
             this.modPartInventoryTextBox.Size = new System.Drawing.Size(165, 28);
@@ -205,7 +205,7 @@
             // 
             // modPartNameTextBox
             // 
-            this.modPartNameTextBox.Location = new System.Drawing.Point(200, 152);
+            this.modPartNameTextBox.Location = new System.Drawing.Point(232, 152);
             this.modPartNameTextBox.Multiline = true;
             this.modPartNameTextBox.Name = "modPartNameTextBox";
             this.modPartNameTextBox.Size = new System.Drawing.Size(165, 28);
@@ -213,7 +213,7 @@
             // 
             // modPartIDTextBox
             // 
-            this.modPartIDTextBox.Location = new System.Drawing.Point(200, 107);
+            this.modPartIDTextBox.Location = new System.Drawing.Point(232, 107);
             this.modPartIDTextBox.Multiline = true;
             this.modPartIDTextBox.Name = "modPartIDTextBox";
             this.modPartIDTextBox.Size = new System.Drawing.Size(165, 28);
