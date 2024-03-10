@@ -213,9 +213,11 @@
             // 
             // modPartIDTextBox
             // 
+            this.modPartIDTextBox.Enabled = false;
             this.modPartIDTextBox.Location = new System.Drawing.Point(232, 107);
             this.modPartIDTextBox.Multiline = true;
             this.modPartIDTextBox.Name = "modPartIDTextBox";
+            this.modPartIDTextBox.ReadOnly = true;
             this.modPartIDTextBox.Size = new System.Drawing.Size(165, 28);
             this.modPartIDTextBox.TabIndex = 20;
             // 

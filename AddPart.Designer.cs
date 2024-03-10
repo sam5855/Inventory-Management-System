@@ -95,9 +95,11 @@
             // 
             // addPartIDTextBox
             // 
+            this.addPartIDTextBox.Enabled = false;
             this.addPartIDTextBox.Location = new System.Drawing.Point(260, 91);
             this.addPartIDTextBox.Multiline = true;
             this.addPartIDTextBox.Name = "addPartIDTextBox";
+            this.addPartIDTextBox.ReadOnly = true;
             this.addPartIDTextBox.Size = new System.Drawing.Size(165, 28);
             this.addPartIDTextBox.TabIndex = 4;
             // 

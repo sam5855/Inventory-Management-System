@@ -23,9 +23,9 @@ namespace Samuel_McMasters_C968
         public Product() { }
 
         //Constructor with arguments
-        public Product(int prodID, string name, int inventory, decimal price, int max, int min)
+        public Product(string name, int inventory, decimal price, int max, int min)
         {
-            ProductID = prodID;
+            ProductID = Inventory.Products.Count + 1;
             Name = name;
             Price = price;
             InStock = inventory;

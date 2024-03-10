@@ -222,6 +222,7 @@
             this.Controls.Add(this.deletePartBtn);
             this.Controls.Add(this.dgvProducts);
             this.Controls.Add(this.dgvParts);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "MainScreen";
             this.Text = "Main Screen";
             this.Load += new System.EventHandler(this.MainScreen_Load);

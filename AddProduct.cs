@@ -39,6 +39,9 @@ namespace Samuel_McMasters_C968
             dgvCandidateParts.AllowUserToAddRows = false;
             dgvAssociatedParts.AllowUserToAddRows = false;
 
+            //Loads new product ID 
+            addProductIDTextBox.Text = (Inventory.Products.Count + 1).ToString();
+
 
 
         }
@@ -156,7 +159,7 @@ namespace Samuel_McMasters_C968
                 return;
             }
             //creates new Product and adds it to inventory
-            Product product = new Product((Inventory.Products.Count + 1), name, inventory, price, max, min);
+            Product product = new Product(name, inventory, price, max, min);
             Inventory.AddProduct(product);
 
             foreach (Part part in addedParts)

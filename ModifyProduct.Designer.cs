@@ -249,9 +249,11 @@
             // 
             // modProdIDTextBox
             // 
+            this.modProdIDTextBox.Enabled = false;
             this.modProdIDTextBox.Location = new System.Drawing.Point(161, 169);
             this.modProdIDTextBox.Multiline = true;
             this.modProdIDTextBox.Name = "modProdIDTextBox";
+            this.modProdIDTextBox.ReadOnly = true;
             this.modProdIDTextBox.Size = new System.Drawing.Size(165, 28);
             this.modProdIDTextBox.TabIndex = 56;
             // 

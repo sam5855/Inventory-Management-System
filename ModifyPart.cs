@@ -34,6 +34,8 @@ namespace Samuel_McMasters_C968
         public ModifyPart(OutsourcedPart outPart)
         {
             InitializeComponent();
+            radioButton1.Checked = true;
+
             modPartIDTextBox.Text = outPart.PartID.ToString();
             modPartNameTextBox.Text = outPart.Name;
             modPartInventoryTextBox.Text = outPart.InStock.ToString();
@@ -42,8 +44,7 @@ namespace Samuel_McMasters_C968
             modPartMinTextBox.Text = outPart.Min.ToString();
             modPartMachineCompanyTextBox.Text = outPart.CompanyName;
 
-            //Checks Radio button for outsourced part
-            radioButton1.Checked = true;
+           
         }
 
         private void ModifyPart_Load(object sender, EventArgs e)
@@ -72,6 +73,19 @@ namespace Samuel_McMasters_C968
                 return;
             }
 
+            //Exception Handling 
+            if (min > max)
+            {
+                MessageBox.Show("ERROR: Max must be greater than min.");
+                return;
+            }
+
+            if (inStock > max || inStock < min)
+            {
+                MessageBox.Show("ERROR: Inventory must be between max and min levels.");
+                return;
+            }
+
             int id = int.Parse(modPartIDTextBox.Text);
             string name = modPartNameTextBox.Text;
             price = decimal.Parse(modPartPriceTextBox.Text);
@@ -80,18 +94,7 @@ namespace Samuel_McMasters_C968
             inStock = int.Parse(modPartInventoryTextBox.Text);
 
 
-            //Exception Handling 
-            if (min > max)
-            {
-                MessageBox.Show("ERROR: Max must be greater than min.");
-                return;
-            }
-            
-            if (inStock > max || inStock < min)
-            {
-                MessageBox.Show("ERROR: Inventory must be between max and min levels.");
-                return;
-            }
+           
 
             if (inHouseBtn.Checked)
             {

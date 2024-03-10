@@ -47,9 +47,7 @@ namespace Samuel_McMasters_C968
 
 
 
-
-
-        //I might be able to delete this
+        
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
@@ -121,7 +119,6 @@ namespace Samuel_McMasters_C968
 
 
 
-
         //Product Side Events
         //Add product button
         private void addProductBtn_Click(object sender, EventArgs e)
@@ -159,24 +156,10 @@ namespace Samuel_McMasters_C968
             else return;        
         }
 
-
-
-
-
         private void dgvParts_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             
         }
-
-
-
-
-
-
-       
-
-      
-
 
         //Removes auto-selected row upon running
         private void myBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)

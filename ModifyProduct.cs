@@ -135,7 +135,7 @@ namespace Samuel_McMasters_C968
                 return;
             }
             //creates new Product and adds it to inventory with parts
-            Product product = new Product(id, name, inventory, price, max, min);
+            Product product = new Product(name, inventory, price, max, min);
             foreach (Part part in addedParts)
             {
                 product.AddAssociatedPart(part);

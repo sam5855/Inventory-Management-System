@@ -147,9 +147,11 @@
             // 
             // addProductIDTextBox
             // 
+            this.addProductIDTextBox.Enabled = false;
             this.addProductIDTextBox.Location = new System.Drawing.Point(173, 175);
             this.addProductIDTextBox.Multiline = true;
             this.addProductIDTextBox.Name = "addProductIDTextBox";
+            this.addProductIDTextBox.ReadOnly = true;
             this.addProductIDTextBox.Size = new System.Drawing.Size(165, 28);
             this.addProductIDTextBox.TabIndex = 33;
             // 
