@@ -14,7 +14,7 @@ namespace Samuel_McMasters_C968
         public OutsourcedPart() { }
         public OutsourcedPart(string name, int inStock, decimal price, int max, int min, string companyName)
         {
-            PartID = (Inventory.AllParts.Count + 1);
+            PartID = (Inventory.AllParts.Count);
             Name = name;    
             Price = price;
             InStock = inStock;

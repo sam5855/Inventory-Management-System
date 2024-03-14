@@ -11,9 +11,11 @@ namespace Samuel_McMasters_C968
 {
     class Inventory
     {
+        //Code that was working for me before changing
         public static BindingList<Product> Products = new BindingList<Product>();
         public static BindingList<Part> AllParts = new BindingList<Part>();
 
+       
 
 
         //Product Methods
@@ -126,14 +128,14 @@ namespace Samuel_McMasters_C968
         public static void UpdatePart(int partID, Part updatedPart)
         {
             
-          //  AllParts.RemoveAt(partID - 1);
-          //  AddPart(updatedPart);
+         //   AllParts.RemoveAt(partID);
+         //   AddPart(updatedPart);
 
             //int partIDHolder = partID;   
 
                foreach (Part currentPart in AllParts)
                {
-                  if (currentPart.PartID == partID)
+                 if (currentPart.PartID == partID)
                   {
                        currentPart.Name = updatedPart.Name;
                        currentPart.InStock = updatedPart.InStock;  
@@ -142,11 +144,11 @@ namespace Samuel_McMasters_C968
                        currentPart.Min = updatedPart.Min;
                       return;
                    }
-               }
+         }
                
                
 
-        }
+     
 
 
         //Populate Binding Lists with exmaple data

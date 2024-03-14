@@ -13,7 +13,7 @@ namespace Samuel_McMasters_C968
         public InhousePart() { }
         public InhousePart(string name, int inStock, decimal price, int max, int min, int machineID)
         {
-            PartID = (Inventory.AllParts.Count + 1);
+            PartID = (Inventory.AllParts.Count);
             Name = name;
             InStock = inStock;
             Price = price;
