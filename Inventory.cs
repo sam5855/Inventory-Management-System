@@ -98,14 +98,16 @@ namespace Samuel_McMasters_C968
         //Remove part from binding list
         public static bool DeletePart(Part part)
         {
-            try
-            {
-                AllParts.Remove(part);
-                return true;
-            }
-            catch
+            int partID = part.PartID;
+            Part deletedPart = LookupPart(partID);
+            if (deletedPart == null)
             {
                 return false;
+            }
+            else
+            {
+                AllParts.Remove(deletedPart);
+                return true;
             }
         }
 
@@ -127,24 +129,33 @@ namespace Samuel_McMasters_C968
         //Update Part
         public static void UpdatePart(int partID, Part updatedPart)
         {
-            
-         //   AllParts.RemoveAt(partID);
-         //   AddPart(updatedPart);
+         
+   
+
+
+            //DeletePart(currentPart);
+            //AllParts.Remove(partID);
+            //AddPart(updatedPart);
 
             //int partIDHolder = partID;   
 
                foreach (Part currentPart in AllParts)
                {
-                 if (currentPart.PartID == partID)
-                  {
-                       currentPart.Name = updatedPart.Name;
-                       currentPart.InStock = updatedPart.InStock;  
-                       currentPart.Price = updatedPart.Price;
-                       currentPart.Max = updatedPart.Max;
-                       currentPart.Min = updatedPart.Min;
-                      return;
+            
+                   if (currentPart.PartID == partID)
+                   {
+                       DeletePart(currentPart);
+                       AddPart(updatedPart);
+                       //currentPart.PartID = partID;    
+                       //currentPart.Name = updatedPart.Name;
+                       //currentPart.InStock = updatedPart.InStock;
+                       //currentPart.Price = updatedPart.Price;
+                       //currentPart.Max = updatedPart.Max;
+                       //currentPart.Min = updatedPart.Min;
+                       return;
                    }
-         }
+               }
+        }
                
                
 
@@ -157,11 +168,12 @@ namespace Samuel_McMasters_C968
             Product exampleProduct = new Product("Example Product", 5, 5.0m, 10, 5);
             Products.Add(exampleProduct);
 
-            Part exampleInPart = new InhousePart("Example In-Part", 10, 5.0m, 20, 10, 1001);
+            Part exampleInPart = new InhousePart(0, "Example In-Part", 10, 5.0m, 20, 10, 1001);
             AllParts.Add(exampleInPart);
-            Part exampleOutPart = new OutsourcedPart("Example Out-Part", 30, 1.0m, 45, 10, "Test Company");
+            Part exampleOutPart = new OutsourcedPart(1, "Example Out-Part", 30, 1.0m, 45, 10, "Test Company");
             AllParts.Add(exampleOutPart);
         }
+
 
 
     }
