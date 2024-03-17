@@ -92,7 +92,7 @@ namespace Samuel_McMasters_C968
             }
         }
 
-        //Checks if text entered matches a part ID
+        //Searched for entered part
         private void partsSearchBtn_Click(object sender, EventArgs e)
         {
             int searchValue = int.Parse(partSearchBox.Text);
@@ -178,6 +178,30 @@ namespace Samuel_McMasters_C968
         private void MainScreen_Load(object sender, EventArgs e)
         {
 
+        }
+
+        //Searches for product
+        private void productSearchBtn_Click(object sender, EventArgs e)
+        {
+            int searchValue = int.Parse(productSearchBox.Text);
+
+            if (searchValue < 0) return;
+
+            Product match = Inventory.LookupProduct(int.Parse(productSearchBox.Text));
+
+            foreach (DataGridViewRow row in dgvProducts.Rows)
+            {
+                Product product = (Product)row.DataBoundItem;
+                if (product.ProductID == match.ProductID)
+                {
+                    row.Selected = true;
+                    break;
+                }
+                else
+                {
+                    row.Selected = false;
+                }
+            }
         }
     }
 }
