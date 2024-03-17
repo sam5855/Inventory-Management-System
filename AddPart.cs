@@ -15,8 +15,6 @@ namespace Samuel_McMasters_C968
         public AddPartScreen()
         {
             InitializeComponent();
-            
-            
             //Loads new part ID 
             addPartIDTextBox.Text = (Inventory.AllParts.Count).ToString();
         }
@@ -92,14 +90,12 @@ namespace Samuel_McMasters_C968
             if (inHouseBtn.Checked)
             {
                 InhousePart inPart = new InhousePart(partID, name, inStockInventory, price, maxStock, minStock, int.Parse(addPartMachineCompanyTextBox.Text));
-                //Inventory.AllParts.Add(inPart);
                 Inventory.AddPart(inPart);
             }
             
             if (radioButton1.Checked)
             {
                 OutsourcedPart outPart = new OutsourcedPart(partID, name, inStockInventory, price, maxStock, minStock, addPartMachineCompanyTextBox.Text);
-                //Inventory.AllParts.Add(outPart);
                 Inventory.AddPart(outPart);
             }
             Close();

@@ -129,16 +129,6 @@ namespace Samuel_McMasters_C968
         //Update Part
         public static void UpdatePart(int partID, Part updatedPart)
         {
-         
-   
-
-
-            //DeletePart(currentPart);
-            //AllParts.Remove(partID);
-            //AddPart(updatedPart);
-
-            //int partIDHolder = partID;   
-
                foreach (Part currentPart in AllParts)
                {
             
@@ -146,12 +136,6 @@ namespace Samuel_McMasters_C968
                    {
                        DeletePart(currentPart);
                        AddPart(updatedPart);
-                       //currentPart.PartID = partID;    
-                       //currentPart.Name = updatedPart.Name;
-                       //currentPart.InStock = updatedPart.InStock;
-                       //currentPart.Price = updatedPart.Price;
-                       //currentPart.Max = updatedPart.Max;
-                       //currentPart.Min = updatedPart.Min;
                        return;
                    }
                }
