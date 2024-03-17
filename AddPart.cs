@@ -39,6 +39,7 @@ namespace Samuel_McMasters_C968
             machineCompanyLabel.Text = "Company Name";
         }
 
+        //Returns user to main screen
         private void partCancelBtn_Click(object sender, EventArgs e)
         {
             Close();
@@ -52,18 +53,49 @@ namespace Samuel_McMasters_C968
             int maxStock;
             int inStockInventory;
             decimal price;
+            int machineID;
 
             try
             {
                 
                 minStock = int.Parse(addPartMinTextbox.Text);
+                
+            }
+            catch
+            {
+                MessageBox.Show("ERROR: Min level must be numeric.");
+                return;
+            }
+
+            try
+            {
+    
                 maxStock = int.Parse(addPartMaxTextBox.Text);
+               
+            }
+            catch
+            {
+                MessageBox.Show("ERROR: Max level must be numeric.");
+                return;
+            }
+
+            try
+            {
                 inStockInventory = int.Parse(addPartInventoryTextBox.Text);
+            }
+            catch
+            {
+                MessageBox.Show("ERROR: Inventory must be numeric.");
+                return;
+            }
+
+            try
+            {
                 price = decimal.Parse(addPartPriceTextBox.Text);
             }
             catch
             {
-                MessageBox.Show("ERROR: Inventory, Price, Max and Min fields must be numeric values.");
+                MessageBox.Show("ERROR: Price must be numeric.");
                 return;
             }
 
@@ -85,11 +117,23 @@ namespace Samuel_McMasters_C968
             {
                 MessageBox.Show("ERROR: Inventory must be between max and min values");
                 return;
-            }    
+            }
+
+
 
             if (inHouseBtn.Checked)
             {
-                InhousePart inPart = new InhousePart(partID, name, inStockInventory, price, maxStock, minStock, int.Parse(addPartMachineCompanyTextBox.Text));
+                try
+                {
+                    machineID = int.Parse(addPartMachineCompanyTextBox.Text);
+                }
+                catch
+                {
+                    MessageBox.Show("ERROR: Machine ID must be numeric.");
+                    return;
+                }
+                machineID = int.Parse(addPartMachineCompanyTextBox.Text);
+                InhousePart inPart = new InhousePart(partID, name, inStockInventory, price, maxStock, minStock, machineID);
                 Inventory.AddPart(inPart);
             }
             

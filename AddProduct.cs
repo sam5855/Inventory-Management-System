@@ -71,8 +71,10 @@ namespace Samuel_McMasters_C968
         //Adds Candidate part to associated part grid view
         private void candidatePartAddBtn_Click(object sender, EventArgs e)
         {
-            Part addedPart = (Part)dgvCandidateParts.CurrentRow.DataBoundItem;
+            Part addedPart = (Part)dgvCandidateParts.CurrentRow.DataBoundItem;      
             addedParts.Add(addedPart);
+            dgvCandidateParts.ClearSelection();
+            dgvAssociatedParts.ClearSelection();
         }
 
 
@@ -101,8 +103,33 @@ namespace Samuel_McMasters_C968
         //Searched for candidate part
         private void candidatePartSearchBtn_Click(object sender, EventArgs e)
         {
-            int partID = int.Parse(candidatePartSearchBox.Text);
-            Part match = Inventory.LookupPart(partID);
+            //Exception handling if search box is empty
+            try
+            {
+                int srchValue = int.Parse(candidatePartSearchBox.Text);
+            }
+            catch
+            {
+                MessageBox.Show("Please enter a valid Part ID to search.");
+                dgvCandidateParts.ClearSelection();
+                dgvAssociatedParts.ClearSelection();
+                candidatePartSearchBox.Text = null;
+                return;
+            }
+
+            int searchValue = int.Parse(candidatePartSearchBox.Text);
+            if (searchValue < 0) return;
+
+            Part match = Inventory.LookupPart(int.Parse(candidatePartSearchBox.Text));
+
+            //Exception handling if search value is not in table
+            if (match == null)
+            {
+                MessageBox.Show("Could not locate part.");
+                candidatePartSearchBox.Text = null;
+                return;
+            }
+
             foreach (DataGridViewRow row in dgvCandidateParts.Rows)
             {
                 Part part = (Part)row.DataBoundItem;
@@ -116,6 +143,11 @@ namespace Samuel_McMasters_C968
                     row.Selected = false;
                 }
             }
+
+
+
+
+
         }
 
 
@@ -130,13 +162,42 @@ namespace Samuel_McMasters_C968
             try
             {
                 min = int.Parse(addProductMinTextBox.Text);
+                
+            }
+            catch
+            {
+                MessageBox.Show("Error: Min value must be numeric.");
+                return;
+            }
+            try
+            {
                 max = int.Parse(addProductMaxTextBox.Text);
+               
+            }
+            catch
+            {
+                MessageBox.Show("Error: Max value must be numeric.");
+                return;
+            }
+            try
+            {
+          
                 inventory = int.Parse(addProductInventoryTextBox.Text);
+             
+            }
+            catch
+            {
+                MessageBox.Show("Error: Inventory value must be numeric.");
+                return;
+            }
+            try
+            {
+      
                 price = decimal.Parse(addProductPriceTextBox.Text);
             }
             catch
             {
-                MessageBox.Show("Error: Inventory, Price, Max and Min text fields must be numeric values.");
+                MessageBox.Show("Error: Price must be numeric.");
                 return;
             }
 
@@ -167,6 +228,12 @@ namespace Samuel_McMasters_C968
                 product.AddAssociatedPart(part);
             }
             Close();
+        }
+
+        private void myBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            dgvCandidateParts.ClearSelection();
+            dgvAssociatedParts.ClearSelection();
         }
     }
 }

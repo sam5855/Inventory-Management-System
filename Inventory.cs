@@ -57,7 +57,7 @@ namespace Samuel_McMasters_C968
                     return prod;
                 }
             }
-            Product emptyProduct = new Product();
+            Product emptyProduct = null;
             return emptyProduct;
         }
 
@@ -78,14 +78,6 @@ namespace Samuel_McMasters_C968
                 }
             }
         }
-        //public static Product CurrentProduct { get; set; }
-        //public static int CurrentProductID { get; set; }
-        //public static int CurrentProductIndex { get; set; }
-
-
-
-
-
 
         //Part Methods
 
@@ -120,6 +112,7 @@ namespace Samuel_McMasters_C968
                 {
                     return part;
                 }
+                
             }
 
             Part emptyPart = null;
@@ -149,12 +142,12 @@ namespace Samuel_McMasters_C968
         //Populate Binding Lists with exmaple data
         public static void ExampleItems()
         {
-            Product exampleProduct = new Product("Example Product", 5, 5.0m, 10, 5);
+            Product exampleProduct = new Product("Bicycle", 5, 5.00m, 10, 5);
             Products.Add(exampleProduct);
 
-            Part exampleInPart = new InhousePart(0, "Example In-Part", 10, 5.0m, 20, 10, 1001);
+            Part exampleInPart = new InhousePart(0, "Tire", 10, 5.00m, 20, 10, 1001);
             AllParts.Add(exampleInPart);
-            Part exampleOutPart = new OutsourcedPart(1, "Example Out-Part", 30, 1.0m, 45, 10, "Test Company");
+            Part exampleOutPart = new OutsourcedPart(1, "Seat", 30, 1.00m, 45, 10, "Seat Co.");
             AllParts.Add(exampleOutPart);
         }
 

@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -83,23 +84,59 @@ namespace Samuel_McMasters_C968
             DialogResult result = MessageBox.Show("Are you sure you want to delete part? This cannot be undone","Confirmation", MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
             {
-                
 
+                //Checks if part is an associated part
+                Part toDelete = (Part)dgvParts.CurrentRow.DataBoundItem;
+                foreach (Product prod in Inventory.Products)
+                {
+                    foreach (Part tryDelete in prod.AssociatedParts)
+                    {
+                        if (toDelete.PartID == tryDelete.PartID)
+                        {
+                            MessageBox.Show("Cannot delete part. Part is associated with product.");
+                            return;
+                        }
+                        
+
+                    } 
+                }
                 foreach (DataGridViewRow row in dgvParts.SelectedRows)
                 {
                     dgvParts.Rows.RemoveAt(row.Index);
+                    return;
                 }
             }
+            else return;
         }
 
         //Searched for entered part
         private void partsSearchBtn_Click(object sender, EventArgs e)
         {
-            int searchValue = int.Parse(partSearchBox.Text);
+            //Exception handling if search box is empty
+            try
+            {
+                int srchValue = int.Parse(partSearchBox.Text);
+            }
+            catch
+            {
+                MessageBox.Show("Please enter a valid Part ID to search.");
+                dgvParts.ClearSelection();
+                partSearchBox.Text = null;
+                return;
+            }
 
+            int searchValue = int.Parse(partSearchBox.Text);
             if (searchValue < 0) return;
 
             Part match = Inventory.LookupPart(int.Parse(partSearchBox.Text));
+
+            //Exception handling if search value is not in table
+            if (match == null)
+            {
+                MessageBox.Show("Could not locate part.");
+                partSearchBox.Text = null;
+                return;
+            }
 
             foreach (DataGridViewRow row in dgvParts.Rows)
             {
@@ -110,7 +147,7 @@ namespace Samuel_McMasters_C968
                     break;
                 }
                 else
-                {
+                {                   
                     row.Selected = false;
                 }
             }
@@ -135,7 +172,7 @@ namespace Samuel_McMasters_C968
         }
 
 
-        //Delete Prodcut button
+        //Delete Product button
         private void deleteProductBtn_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show("Do you want to delete? This cannot be undone.", "Confirmation", MessageBoxButtons.YesNo);
@@ -159,11 +196,29 @@ namespace Samuel_McMasters_C968
         //Searches for product
         private void productSearchBtn_Click(object sender, EventArgs e)
         {
-            int searchValue = int.Parse(productSearchBox.Text);
+            //Exception handling if search box is empty or doesn't contain ID
+            try
+            {
+                int srchValue = int.Parse(productSearchBox.Text);
+            }
+            catch
+            {
+                MessageBox.Show("Please enter a valid Product ID to search.");
+                dgvProducts.ClearSelection();
+                productSearchBox.Text = null;
+                return;
+            }
 
+            int searchValue = int.Parse(productSearchBox.Text);
             if (searchValue < 0) return;
 
             Product match = Inventory.LookupProduct(int.Parse(productSearchBox.Text));
+            if ( match == null)
+            {
+                MessageBox.Show("Could not locate product.");
+                productSearchBox.Text = null;
+                return;
+            }
 
             foreach (DataGridViewRow row in dgvProducts.Rows)
             {

@@ -73,7 +73,7 @@
             this.deletePartBtn.Name = "deletePartBtn";
             this.deletePartBtn.Size = new System.Drawing.Size(92, 35);
             this.deletePartBtn.TabIndex = 2;
-            this.deletePartBtn.Text = "Delete";
+            this.deletePartBtn.Text = "Delete Part";
             this.deletePartBtn.UseVisualStyleBackColor = true;
             this.deletePartBtn.Click += new System.EventHandler(this.deletePartBtn_Click);
             // 
@@ -83,7 +83,7 @@
             this.modifyPartBtn.Name = "modifyPartBtn";
             this.modifyPartBtn.Size = new System.Drawing.Size(92, 35);
             this.modifyPartBtn.TabIndex = 3;
-            this.modifyPartBtn.Text = "Modify";
+            this.modifyPartBtn.Text = "Modify Part";
             this.modifyPartBtn.UseVisualStyleBackColor = true;
             this.modifyPartBtn.Click += new System.EventHandler(this.modifyPartBtn_Click);
             // 
@@ -93,7 +93,7 @@
             this.addPartBtn.Name = "addPartBtn";
             this.addPartBtn.Size = new System.Drawing.Size(92, 35);
             this.addPartBtn.TabIndex = 4;
-            this.addPartBtn.Text = "Add";
+            this.addPartBtn.Text = "Add Part";
             this.addPartBtn.UseVisualStyleBackColor = true;
             this.addPartBtn.Click += new System.EventHandler(this.addPartBtn_Click);
             // 
@@ -103,7 +103,7 @@
             this.deleteProductBtn.Name = "deleteProductBtn";
             this.deleteProductBtn.Size = new System.Drawing.Size(92, 35);
             this.deleteProductBtn.TabIndex = 5;
-            this.deleteProductBtn.Text = "Delete";
+            this.deleteProductBtn.Text = "Delete Product";
             this.deleteProductBtn.UseVisualStyleBackColor = true;
             this.deleteProductBtn.Click += new System.EventHandler(this.deleteProductBtn_Click);
             // 
@@ -113,7 +113,7 @@
             this.modifyProductBtn.Name = "modifyProductBtn";
             this.modifyProductBtn.Size = new System.Drawing.Size(92, 35);
             this.modifyProductBtn.TabIndex = 6;
-            this.modifyProductBtn.Text = "Modify";
+            this.modifyProductBtn.Text = "Modify Product";
             this.modifyProductBtn.UseVisualStyleBackColor = true;
             this.modifyProductBtn.Click += new System.EventHandler(this.modifyProductBtn_Click);
             // 
@@ -123,7 +123,7 @@
             this.addProductBtn.Name = "addProductBtn";
             this.addProductBtn.Size = new System.Drawing.Size(92, 35);
             this.addProductBtn.TabIndex = 7;
-            this.addProductBtn.Text = "Add";
+            this.addProductBtn.Text = "Add Product";
             this.addProductBtn.UseVisualStyleBackColor = true;
             this.addProductBtn.Click += new System.EventHandler(this.addProductBtn_Click);
             // 

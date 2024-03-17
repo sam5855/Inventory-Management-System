@@ -183,6 +183,7 @@
             this.dgvCandidateParts.Size = new System.Drawing.Size(495, 150);
             this.dgvCandidateParts.TabIndex = 45;
             this.dgvCandidateParts.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.bindingComplete);
+            this.dgvCandidateParts.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.myBindingComplete);
             // 
             // candidatePartsLabel
             // 

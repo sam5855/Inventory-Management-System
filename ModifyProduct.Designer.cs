@@ -103,6 +103,7 @@
             this.candidatePartSearchBtn.TabIndex = 73;
             this.candidatePartSearchBtn.Text = "Search";
             this.candidatePartSearchBtn.UseVisualStyleBackColor = true;
+            this.candidatePartSearchBtn.Click += new System.EventHandler(this.candidatePartSearchBtn_Click);
             // 
             // candidatePartSearchBox
             // 
@@ -146,6 +147,7 @@
             this.dgvModifyCandidateParts.Name = "dgvModifyCandidateParts";
             this.dgvModifyCandidateParts.Size = new System.Drawing.Size(495, 150);
             this.dgvModifyCandidateParts.TabIndex = 68;
+            this.dgvModifyCandidateParts.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.myBindingComplete);
             // 
             // addProductLabel
             // 
