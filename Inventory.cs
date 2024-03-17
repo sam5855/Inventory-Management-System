@@ -48,7 +48,7 @@ namespace Samuel_McMasters_C968
         }
 
         //Search Product
-        public static Product LookupProduct (int prodID)
+        public static Product LookupProduct(int prodID)
         {
             foreach (Product prod in Products)
             {
@@ -62,7 +62,7 @@ namespace Samuel_McMasters_C968
         }
 
         //Update Product
-        public static void UpdateProduct (int prodID, Product updatedProduct)
+        public static void UpdateProduct(int prodID, Product updatedProduct)
         {
             foreach (Product currentProduct in Products)
             {
@@ -78,9 +78,9 @@ namespace Samuel_McMasters_C968
                 }
             }
         }
-        public static Product CurrentProduct { get; set; }
-        public static int CurrentProductID { get; set; }
-        public static int CurrentProductIndex { get; set; }
+        //public static Product CurrentProduct { get; set; }
+        //public static int CurrentProductID { get; set; }
+        //public static int CurrentProductIndex { get; set; }
 
 
 

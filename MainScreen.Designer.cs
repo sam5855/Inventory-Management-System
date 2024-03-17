@@ -200,6 +200,7 @@
             this.productSearchBtn.TabIndex = 15;
             this.productSearchBtn.Text = "Search";
             this.productSearchBtn.UseVisualStyleBackColor = true;
+            this.productSearchBtn.Click += new System.EventHandler(this.productSearchBtn_Click);
             // 
             // MainScreen
             // 
