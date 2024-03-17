@@ -97,7 +97,7 @@ namespace Samuel_McMasters_C968
         {
             int searchValue = int.Parse(partSearchBox.Text);
 
-            if (searchValue < 1) return;
+            if (searchValue < 0) return;
 
             Part match = Inventory.LookupPart(int.Parse(partSearchBox.Text));
 
