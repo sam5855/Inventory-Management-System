@@ -112,11 +112,31 @@ namespace Samuel_McMasters_C968
         //Searched for entered part
         private void partsSearchBtn_Click(object sender, EventArgs e)
         {
-            int searchValue = int.Parse(partSearchBox.Text);
+            //Exception handling if search box is empty
+            try
+            {
+                int srchValue = int.Parse(partSearchBox.Text);
+            }
+            catch
+            {
+                MessageBox.Show("Please enter a valid Part ID to search.");
+                dgvParts.ClearSelection();
+                partSearchBox.Text = null;
+                return;
+            }
 
+            int searchValue = int.Parse(partSearchBox.Text);
             if (searchValue < 0) return;
 
             Part match = Inventory.LookupPart(int.Parse(partSearchBox.Text));
+
+            //Exception handling if search value is not in table
+            if (match == null)
+            {
+                MessageBox.Show("Could not locate part.");
+                partSearchBox.Text = null;
+                return;
+            }
 
             foreach (DataGridViewRow row in dgvParts.Rows)
             {
@@ -127,7 +147,7 @@ namespace Samuel_McMasters_C968
                     break;
                 }
                 else
-                {
+                {                   
                     row.Selected = false;
                 }
             }
@@ -176,11 +196,29 @@ namespace Samuel_McMasters_C968
         //Searches for product
         private void productSearchBtn_Click(object sender, EventArgs e)
         {
-            int searchValue = int.Parse(productSearchBox.Text);
+            //Exception handling if search box is empty or doesn't contain ID
+            try
+            {
+                int srchValue = int.Parse(productSearchBox.Text);
+            }
+            catch
+            {
+                MessageBox.Show("Please enter a valid Product ID to search.");
+                dgvProducts.ClearSelection();
+                productSearchBox.Text = null;
+                return;
+            }
 
+            int searchValue = int.Parse(productSearchBox.Text);
             if (searchValue < 0) return;
 
             Product match = Inventory.LookupProduct(int.Parse(productSearchBox.Text));
+            if ( match == null)
+            {
+                MessageBox.Show("Could not locate product.");
+                productSearchBox.Text = null;
+                return;
+            }
 
             foreach (DataGridViewRow row in dgvProducts.Rows)
             {

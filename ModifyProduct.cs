@@ -15,6 +15,7 @@ namespace Samuel_McMasters_C968
         BindingList<Part> addedParts = new BindingList<Part>();
         MainScreen MainForm = (MainScreen)Application.OpenForms["MainScreen"];
 
+
         public ModifyProduct(Product prod)
         {
             InitializeComponent();
@@ -57,7 +58,7 @@ namespace Samuel_McMasters_C968
 
         private void ModifyProduct_Load(object sender, EventArgs e)
         {
-
+           
         }
 
         //Adds candidate parts to associated parts
@@ -65,6 +66,8 @@ namespace Samuel_McMasters_C968
         {
             Part part = (Part)dgvModifyCandidateParts.CurrentRow.DataBoundItem;
             addedParts.Add(part);
+            dgvModifyCandidateParts.ClearSelection();
+            dgvModifyAssociatedParts.ClearSelection();
         }
 
 
@@ -93,6 +96,7 @@ namespace Samuel_McMasters_C968
         private void productCancelBtn_Click(object sender, EventArgs e)
         {
             Close();
+            MainForm.dgvProducts.ClearSelection();  
         }
 
         private void productSaveBtn_Click(object sender, EventArgs e)
@@ -105,13 +109,42 @@ namespace Samuel_McMasters_C968
             try
             {
                 min = int.Parse(modProdMinTextBox.Text);
+             
+            }
+            catch
+            {
+                MessageBox.Show("Error: Min value must be numeric.");
+                return;
+            }
+            try
+            {
                 max = int.Parse(modProdMaxTextBox.Text);
+               
+            }
+            catch
+            {
+                MessageBox.Show("Error: Max value must be numeric.");
+                return;
+            }
+            try
+            {
+         
                 inventory = int.Parse(modProdInventoryTextBox.Text);
+          
+            }
+            catch
+            {
+                MessageBox.Show("Error: Inventory value must be numeric.");
+                return;
+            }
+            try
+            {
+           
                 price = decimal.Parse(modProdPriceTextBox.Text);
             }
             catch
             {
-                MessageBox.Show("Error: Inventory, Price, Max and Min must be numeric values.");
+                MessageBox.Show("Error: Price must be numeric.");
                 return;
             }
 
@@ -144,6 +177,57 @@ namespace Samuel_McMasters_C968
             Close();
             MainForm.dgvProducts.Update();
             MainForm.dgvProducts.Refresh();
+        }
+
+        private void myBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            dgvModifyCandidateParts.ClearSelection();
+            dgvModifyAssociatedParts.ClearSelection();
+        }
+
+        private void candidatePartSearchBtn_Click(object sender, EventArgs e)
+        {
+            //Exception handling if search box is empty
+            try
+            {
+                int srchValue = int.Parse(candidatePartSearchBox.Text);
+            }
+            catch
+            {
+                MessageBox.Show("Please enter a valid Part ID to search.");
+                dgvModifyCandidateParts.ClearSelection();
+                dgvModifyAssociatedParts.ClearSelection();
+                candidatePartSearchBox.Text = null;
+                return;
+            }
+
+            int searchValue = int.Parse(candidatePartSearchBox.Text);
+            if (searchValue < 0) return;
+
+            Part match = Inventory.LookupPart(int.Parse(candidatePartSearchBox.Text));
+
+            //Exception handling if search value is not in table
+            if (match == null)
+            {
+                MessageBox.Show("Could not locate part.");
+                candidatePartSearchBox.Text = null;
+                return;
+            }
+
+            foreach (DataGridViewRow row in dgvModifyCandidateParts.Rows)
+            {
+                Part part = (Part)row.DataBoundItem;
+                if (part.PartID == match.PartID)
+                {
+                    row.Selected = true;
+                    break;
+                }
+                else
+                {
+                    row.Selected = false;
+                }
+            }
+
         }
     }
 }

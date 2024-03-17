@@ -12,6 +12,8 @@ namespace Samuel_McMasters_C968
 
 
         public OutsourcedPart() { }
+
+        //Constructor for Add Part Functionality 
         public OutsourcedPart(string name, int inStock, decimal price, int max, int min, string companyName)
         {
             PartID = (Inventory.AllParts.Count);
@@ -23,6 +25,7 @@ namespace Samuel_McMasters_C968
             CompanyName = companyName;
         }
 
+        //Constructor for Modify Part Functionality
         public OutsourcedPart(int partID, string name, int inStock, decimal price, int max, int min, string companyName)
         {
             PartID = partID;

@@ -61,19 +61,54 @@ namespace Samuel_McMasters_C968
             int max;
             int inStock;
             decimal price;
+            int machineID;
 
             try
             {
                 min = int.Parse(modPartMinTextBox.Text);
+              
+            }
+            catch
+            {
+                MessageBox.Show("ERROR: Min must be numeric.");
+                return;
+            }
+
+            try
+            {
+                
                 max = int.Parse(modPartMaxTextBox.Text);
+              
+            }
+            catch
+            {
+                MessageBox.Show("ERROR: Max must be numeric.");
+                return;
+            }
+
+            try
+            {
+
                 inStock = int.Parse(modPartInventoryTextBox.Text);
+              
+            }
+            catch
+            {
+                MessageBox.Show("ERROR: Inventory must be numeric.");
+                return;
+            }
+
+            try
+            {
                 price = decimal.Parse(modPartPriceTextBox.Text);
             }
             catch
             {
-                MessageBox.Show("ERROR: Inventory, Price, Max and Min must be numeric values.");
+                MessageBox.Show("ERROR: Price must be numeric.");
                 return;
             }
+
+
 
             //Exception Handling 
             if (min > max)
@@ -100,6 +135,15 @@ namespace Samuel_McMasters_C968
 
             if (inHouseBtn.Checked)
             {
+                try
+                {
+                    machineID = int.Parse(modPartMachineCompanyTextBox.Text);
+                }
+                catch
+                {
+                    MessageBox.Show("ERROR: Machine ID must be numeric.");
+                    return;
+                }
                 InhousePart inPart = new InhousePart(id, name, inStock, price, max, min, int.Parse(modPartMachineCompanyTextBox.Text));
                 Inventory.UpdatePart(id, inPart);
                 inHouseBtn.Checked = true;
@@ -121,6 +165,8 @@ namespace Samuel_McMasters_C968
         private void partCancelBtn_Click(object sender, EventArgs e)
         {
             Close();
+            MainForm.dgvParts.ClearSelection();
+           
         }
 
         //Changes text to "Machine ID"
