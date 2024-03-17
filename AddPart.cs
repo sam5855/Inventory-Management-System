@@ -39,6 +39,7 @@ namespace Samuel_McMasters_C968
             machineCompanyLabel.Text = "Company Name";
         }
 
+        //Returns user to main screen
         private void partCancelBtn_Click(object sender, EventArgs e)
         {
             Close();

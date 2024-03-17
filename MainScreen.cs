@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -83,13 +84,29 @@ namespace Samuel_McMasters_C968
             DialogResult result = MessageBox.Show("Are you sure you want to delete part? This cannot be undone","Confirmation", MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
             {
-                
 
+                //Checks if part is an associated part
+                Part toDelete = (Part)dgvParts.CurrentRow.DataBoundItem;
+                foreach (Product prod in Inventory.Products)
+                {
+                    foreach (Part tryDelete in prod.AssociatedParts)
+                    {
+                        if (toDelete.PartID == tryDelete.PartID)
+                        {
+                            MessageBox.Show("Cannot delete part. Part is associated with product.");
+                            return;
+                        }
+                        
+
+                    } 
+                }
                 foreach (DataGridViewRow row in dgvParts.SelectedRows)
                 {
                     dgvParts.Rows.RemoveAt(row.Index);
+                    return;
                 }
             }
+            else return;
         }
 
         //Searched for entered part
@@ -135,7 +152,7 @@ namespace Samuel_McMasters_C968
         }
 
 
-        //Delete Prodcut button
+        //Delete Product button
         private void deleteProductBtn_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show("Do you want to delete? This cannot be undone.", "Confirmation", MessageBoxButtons.YesNo);
