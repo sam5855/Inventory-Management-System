@@ -156,6 +156,31 @@ namespace Samuel_McMasters_C968
             else return;        
         }
 
+        //Searches for product
+        private void productSearchBtn_Click(object sender, EventArgs e)
+        {
+            int searchValue = int.Parse(productSearchBox.Text);
+
+            if (searchValue < 0) return;
+
+            Product match = Inventory.LookupProduct(int.Parse(productSearchBox.Text));
+
+            foreach (DataGridViewRow row in dgvProducts.Rows)
+            {
+                Product product = (Product)row.DataBoundItem;
+                if (product.ProductID == match.ProductID)
+                {
+                    row.Selected = true;
+                    break;
+                }
+                else
+                {
+                    row.Selected = false;
+                }
+            }
+        }
+
+
         private void dgvParts_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             
@@ -180,28 +205,6 @@ namespace Samuel_McMasters_C968
 
         }
 
-        //Searches for product
-        private void productSearchBtn_Click(object sender, EventArgs e)
-        {
-            int searchValue = int.Parse(productSearchBox.Text);
-
-            if (searchValue < 0) return;
-
-            Product match = Inventory.LookupProduct(int.Parse(productSearchBox.Text));
-
-            foreach (DataGridViewRow row in dgvProducts.Rows)
-            {
-                Product product = (Product)row.DataBoundItem;
-                if (product.ProductID == match.ProductID)
-                {
-                    row.Selected = true;
-                    break;
-                }
-                else
-                {
-                    row.Selected = false;
-                }
-            }
-        }
+        
     }
 }
