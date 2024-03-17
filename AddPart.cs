@@ -18,7 +18,7 @@ namespace Samuel_McMasters_C968
             
             
             //Loads new part ID 
-            addPartIDTextBox.Text = (Inventory.AllParts.Count + 1).ToString();
+            addPartIDTextBox.Text = (Inventory.AllParts.Count).ToString();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -49,6 +49,7 @@ namespace Samuel_McMasters_C968
         //Saves new part
         private void partSaveBtn_Click(object sender, EventArgs e)
         {
+            int partID;
             int minStock;
             int maxStock;
             int inStockInventory;
@@ -56,8 +57,9 @@ namespace Samuel_McMasters_C968
 
             try
             {
+                
                 minStock = int.Parse(addPartMinTextbox.Text);
-                maxStock = int.Parse(addPartMachineCompanyTextBox.Text);
+                maxStock = int.Parse(addPartMaxTextBox.Text);
                 inStockInventory = int.Parse(addPartInventoryTextBox.Text);
                 price = decimal.Parse(addPartPriceTextBox.Text);
             }
@@ -67,6 +69,7 @@ namespace Samuel_McMasters_C968
                 return;
             }
 
+            partID = int.Parse(addPartIDTextBox.Text);
             string name = addPartNameTextBox.Text;
             price = decimal.Parse(addPartPriceTextBox.Text);
             minStock = int.Parse(addPartMinTextbox.Text);
@@ -88,15 +91,16 @@ namespace Samuel_McMasters_C968
 
             if (inHouseBtn.Checked)
             {
-                InhousePart inPart = new InhousePart(name, inStockInventory, price, maxStock, minStock, int.Parse(addPartMachineCompanyTextBox.Text));
-                Inventory.AllParts.Add(inPart);
-
+                InhousePart inPart = new InhousePart(partID, name, inStockInventory, price, maxStock, minStock, int.Parse(addPartMachineCompanyTextBox.Text));
+                //Inventory.AllParts.Add(inPart);
+                Inventory.AddPart(inPart);
             }
             
             if (radioButton1.Checked)
             {
-                OutsourcedPart outPart = new OutsourcedPart(name, inStockInventory, price, maxStock, minStock, addPartMachineCompanyTextBox.Text);
-                Inventory.AllParts.Add(outPart);
+                OutsourcedPart outPart = new OutsourcedPart(partID, name, inStockInventory, price, maxStock, minStock, addPartMachineCompanyTextBox.Text);
+                //Inventory.AllParts.Add(outPart);
+                Inventory.AddPart(outPart);
             }
             Close();
 

@@ -21,6 +21,8 @@ namespace Samuel_McMasters_C968
         public ModifyPart(InhousePart inPart)
         {
             InitializeComponent();
+            inHouseBtn.Checked = true;
+
             modPartIDTextBox.Text = inPart.PartID.ToString();
             modPartNameTextBox.Text = inPart.Name;
             modPartInventoryTextBox.Text = inPart.InStock.ToString();
@@ -94,7 +96,7 @@ namespace Samuel_McMasters_C968
             inStock = int.Parse(modPartInventoryTextBox.Text);
 
 
-           
+            
 
             if (inHouseBtn.Checked)
             {

@@ -62,12 +62,10 @@
             // inHouseBtn
             // 
             this.inHouseBtn.AutoSize = true;
-            this.inHouseBtn.Checked = true;
             this.inHouseBtn.Location = new System.Drawing.Point(187, 17);
             this.inHouseBtn.Name = "inHouseBtn";
             this.inHouseBtn.Size = new System.Drawing.Size(68, 17);
             this.inHouseBtn.TabIndex = 2;
-            this.inHouseBtn.TabStop = true;
             this.inHouseBtn.Text = "In-House";
             this.inHouseBtn.UseVisualStyleBackColor = true;
             this.inHouseBtn.CheckedChanged += new System.EventHandler(this.inHouseBtn_CheckedChanged);
