@@ -1,0 +1,15 @@
+C:\Users\Sam\source\repos\C968\Samuel-McMasters-C968\bin\Release\Samuel-McMasters-C968.exe.config
+C:\Users\Sam\source\repos\C968\Samuel-McMasters-C968\bin\Release\Samuel-McMasters-C968.exe
+C:\Users\Sam\source\repos\C968\Samuel-McMasters-C968\bin\Release\Samuel-McMasters-C968.pdb
+C:\Users\Sam\source\repos\C968\Samuel-McMasters-C968\obj\Release\Samuel-McMasters-C968.csproj.AssemblyReference.cache
+C:\Users\Sam\source\repos\C968\Samuel-McMasters-C968\obj\Release\Samuel-McMasters-C968.csproj.SuggestedBindingRedirects.cache
+C:\Users\Sam\source\repos\C968\Samuel-McMasters-C968\obj\Release\Samuel_McMasters_C968.AddPartScreen.resources
+C:\Users\Sam\source\repos\C968\Samuel-McMasters-C968\obj\Release\Samuel_McMasters_C968.AddProduct.resources
+C:\Users\Sam\source\repos\C968\Samuel-McMasters-C968\obj\Release\Samuel_McMasters_C968.MainScreen.resources
+C:\Users\Sam\source\repos\C968\Samuel-McMasters-C968\obj\Release\Samuel_McMasters_C968.ModifyPart.resources
+C:\Users\Sam\source\repos\C968\Samuel-McMasters-C968\obj\Release\Samuel_McMasters_C968.ModifyProduct.resources
+C:\Users\Sam\source\repos\C968\Samuel-McMasters-C968\obj\Release\Samuel_McMasters_C968.Properties.Resources.resources
+C:\Users\Sam\source\repos\C968\Samuel-McMasters-C968\obj\Release\Samuel-McMasters-C968.csproj.GenerateResource.cache
+C:\Users\Sam\source\repos\C968\Samuel-McMasters-C968\obj\Release\Samuel-McMasters-C968.csproj.CoreCompileInputs.cache
+C:\Users\Sam\source\repos\C968\Samuel-McMasters-C968\obj\Release\Samuel-McMasters-C968.exe
+C:\Users\Sam\source\repos\C968\Samuel-McMasters-C968\obj\Release\Samuel-McMasters-C968.pdb

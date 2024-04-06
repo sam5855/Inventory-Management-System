@@ -5,6 +5,8 @@ VisualStudioVersion = 17.3.32929.385
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Samuel-McMasters-C968", "Samuel-McMasters-C968.csproj", "{2F81C826-E922-49D8-817D-A45625A5B702}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "ERPSetup", "..\ERPSetup\ERPSetup.vdproj", "{1BC7B67E-B177-45E5-A5A5-DAFDC9B6E048}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,8 @@ Global
 		{2F81C826-E922-49D8-817D-A45625A5B702}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2F81C826-E922-49D8-817D-A45625A5B702}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2F81C826-E922-49D8-817D-A45625A5B702}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1BC7B67E-B177-45E5-A5A5-DAFDC9B6E048}.Debug|Any CPU.ActiveCfg = Debug
+		{1BC7B67E-B177-45E5-A5A5-DAFDC9B6E048}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

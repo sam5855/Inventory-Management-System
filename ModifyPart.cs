@@ -130,7 +130,7 @@ namespace Samuel_McMasters_C968
             max = int.Parse(modPartMaxTextBox.Text);
             inStock = int.Parse(modPartInventoryTextBox.Text);
 
-
+            
             
 
             if (inHouseBtn.Checked)

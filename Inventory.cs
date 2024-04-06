@@ -11,7 +11,7 @@ namespace Samuel_McMasters_C968
 {
     class Inventory
     {
-        //Code that was working for me before changing
+        
         public static BindingList<Product> Products = new BindingList<Product>();
         public static BindingList<Part> AllParts = new BindingList<Part>();
 
